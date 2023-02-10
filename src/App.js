@@ -16,12 +16,12 @@ const defaultTodos = [
 
 function App() {
   const [searchValue, setSearchValue] = React.useState("");
-  const [todosValues, setTodosValues] = React.useState(defaultTodos);
+  // const [todosValues, setTodosValues] = React.useState(defaultTodos);
 
-  const todosCompletedLength = todosValues.filter(
-    (todo) => todo.completed
-  ).length;
-  const todosLength = todosValues.filter((todo) => todo.completed).length;
+  // const todosCompletedLength = todosValues.filter(
+  //   (todo) => todo.completed
+  // ).length;
+  // const todosLength = todosValues.filter((todo) => todo.completed).length;
 
   return (
     <React.Fragment>
