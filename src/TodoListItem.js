@@ -11,28 +11,24 @@ function TodoListItem(props) {
   };
 
   return (
-    <React.Fragment>
-      <li className="TodoListItem">
-        <span
-          className={`Icon Icon-check ${
-            props.completed && "Icon-check--active"
-          }`}
-          onClick={onComplete}
-        >
-          {" "}
-          √{" "}
-        </span>
-        <p
-          className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
-        >
-          {props.text}
-        </p>
-        <span className="Icon Icon-delete" onClick={onDelete}>
-          {" "}
-          X{" "}
-        </span>
-      </li>
-    </React.Fragment>
+    <li className="TodoListItem">
+      <span
+        className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
+        onClick={onComplete}
+      >
+        √
+      </span>
+      <p
+        className={`TodoListItem-p ${
+          props.completed && "TodoListItem-p--complete"
+        }`}
+      >
+        {props.text}
+      </p>
+      <span className="Icon Icon-delete" onClick={onDelete}>
+        X
+      </span>
+    </li>
   );
 }
 
