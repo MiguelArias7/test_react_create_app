@@ -3,11 +3,10 @@ import "./TodoSearch.css";
 
 function TodoSearch({ searchValue, setSearchValue }) {
   const onSearchValueChange = (event) => {
-    console.log(event.target.value);
     setSearchValue(event.target.value);
   };
 
-  return [
+  return (
     <React.Fragment>
       <input
         className="TodoSearch"
@@ -15,9 +14,8 @@ function TodoSearch({ searchValue, setSearchValue }) {
         onChange={onSearchValueChange}
         value={searchValue}
       ></input>
-    </React.Fragment>,
-    <p>{searchValue}</p>,
-  ];
+    </React.Fragment>
+  );
 }
 
 export { TodoSearch };
