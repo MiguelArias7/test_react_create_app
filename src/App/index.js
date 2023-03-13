@@ -3,7 +3,7 @@
 
 import React from "react";
 import { AppUI } from "./AppUI";
-import { TodoProvider } from "./TodoContext";
+import { TodoProvider } from "../TodoContext";
 
 // const defaultTodos = [
 //   { id: "1", text: "Terminar A", completed: false },
