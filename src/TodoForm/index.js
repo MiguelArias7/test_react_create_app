@@ -20,8 +20,14 @@ function TodoForm() {
     setNewTodoValue(event.target.value);
   }
 
+  function onTeclaEscape(event) {
+    if (event.key === "Escape") {
+      onCancel();
+    }
+  }
+
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} onKeyDown={onTeclaEscape}>
       <label> Escribe tu nuevo ToDo </label>
       <textarea
         value={newTodoValue}
