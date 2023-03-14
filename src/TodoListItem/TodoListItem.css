@@ -55,3 +55,12 @@
 .Icon-delete:hover {
   color: red;
 }
+
+.Icon-edit {
+  position: absolute;
+  right: 50px;
+}
+
+.Icon-edit:hover {
+  color: rgb(0, 166, 255);
+}

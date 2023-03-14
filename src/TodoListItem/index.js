@@ -1,5 +1,9 @@
 import React from "react";
-import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+import {
+  AiOutlineCheckCircle,
+  AiOutlineCloseCircle,
+  AiOutlineEdit,
+} from "react-icons/ai";
 import "./TodoListItem.css";
 
 function TodoListItem(props) {
@@ -18,6 +22,9 @@ function TodoListItem(props) {
       >
         {props.text}
       </p>
+      <span className="Icon Icon-edit" onClick={props.onEdit}>
+        <AiOutlineEdit></AiOutlineEdit>
+      </span>
       <span className="Icon Icon-delete" onClick={props.onDelete}>
         <AiOutlineCloseCircle></AiOutlineCloseCircle>
       </span>

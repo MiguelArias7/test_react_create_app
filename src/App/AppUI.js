@@ -7,6 +7,7 @@ import { TodoListItem } from "../TodoListItem";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
+import { TodoEditForm } from "../TodoEditForm";
 
 function AppUI() {
   const {
@@ -15,9 +16,12 @@ function AppUI() {
     searchedTodos,
     toggleTodo,
     deleteTodo,
-    openModal,
-    setOpenModal,
+    openModalAdd,
+    setOpenModalAdd,
+    modalEditTodo,
+    setModalEditTodo,
   } = React.useContext(TodoContext);
+
   return (
     <React.Fragment>
       <TodoCounter></TodoCounter>
@@ -38,15 +42,28 @@ function AppUI() {
             onDelete={() => {
               deleteTodo(todo.id);
             }}
+            onEdit={() => {
+              setModalEditTodo({
+                open: true,
+                TodoIdEdit: todo.id,
+                TodoValueEdit: todo.text,
+              });
+            }}
           />
         ))}
       </TodoList>
-      {openModal && (
+      {openModalAdd && (
         <Modal>
           <TodoForm></TodoForm>
         </Modal>
       )}
-      <CreateTodoButton setOpenModal={setOpenModal}></CreateTodoButton>
+
+      {modalEditTodo.open && (
+        <Modal>
+          <TodoEditForm></TodoEditForm>
+        </Modal>
+      )}
+      <CreateTodoButton setOpenModalAdd={setOpenModalAdd}></CreateTodoButton>
     </React.Fragment>
   );
 }

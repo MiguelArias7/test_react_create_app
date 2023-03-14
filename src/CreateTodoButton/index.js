@@ -1,12 +1,12 @@
 import React from "react";
 import "./CreateTodoButton.css";
 //TODO: Cambiar implementación por context
-function CreateTodoButton({ setOpenModal }) {
+function CreateTodoButton({ setOpenModalAdd }) {
   return (
     <React.Fragment>
       <button
         className="CreateTodoButton"
-        onClick={() => setOpenModal((prevSate) => !prevSate)}
+        onClick={() => setOpenModalAdd((prevSate) => !prevSate)}
       >
         +
       </button>

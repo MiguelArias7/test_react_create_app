@@ -3,10 +3,10 @@ import { TodoContext } from "../TodoContext";
 import "./TodoForm.css";
 
 function TodoForm() {
-  const { addTodo, setOpenModal } = React.useContext(TodoContext);
+  const { addTodo, setOpenModalAdd } = React.useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = React.useState("");
   function onCancel() {
-    setOpenModal(false);
+    setOpenModalAdd(false);
     setNewTodoValue("");
   }
 
@@ -36,10 +36,7 @@ function TodoForm() {
         >
           Cancelar
         </button>
-        <button
-          type="submit"
-          className="TodoForm-button odoForm-button--cancel"
-        >
+        <button type="submit" className="TodoForm-button odoForm-button-add">
           Añadir ToDo
         </button>
       </div>
