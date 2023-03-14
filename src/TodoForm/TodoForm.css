@@ -8,11 +8,14 @@ form {
     flex-direction: column;
 }
 
+p {
+    color: #ff0000;
+}
+
 label {
     text-align: center;
     font-weight: bold;
-    font-size: #1E1E1F;
-    color: black;
+    color: #1E1E1F;
     margin-bottom: 26px;
 }
 

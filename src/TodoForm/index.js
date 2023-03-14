@@ -5,6 +5,8 @@ import "./TodoForm.css";
 function TodoForm() {
   const { addTodo, setOpenModalAdd } = React.useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = React.useState("");
+  const [error, setError] = React.useState(false);
+
   function onCancel() {
     setOpenModalAdd(false);
     setNewTodoValue("");
@@ -12,8 +14,11 @@ function TodoForm() {
 
   function onSubmit(event) {
     event.preventDefault();
-    addTodo(newTodoValue);
-    onCancel();
+    if (newTodoValue.length === 0) setError(true);
+    else {
+      addTodo(newTodoValue);
+      onCancel();
+    }
   }
 
   function onChange(event) {
@@ -34,6 +39,7 @@ function TodoForm() {
         onChange={onChange}
         placeholder="Cortar la cebolla"
       ></textarea>
+      {error && <p>Tienes un error en el mensaje</p>}
       <div className="TodoForm-buttonContainer">
         <button
           onClick={onCancel}
