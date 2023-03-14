@@ -56,6 +56,12 @@ function TodoProvider(props) {
     saveTodos(newTodos);
   };
 
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({ completed: false, text: text });
+    saveTodos(newTodos);
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -66,6 +72,7 @@ function TodoProvider(props) {
         searchedTodos,
         toggleTodo,
         deleteTodo,
+        addTodo,
         loading,
         error,
         openModal,
