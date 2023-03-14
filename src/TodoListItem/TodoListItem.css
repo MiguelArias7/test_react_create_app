@@ -1,5 +1,5 @@
 .TodoListItem {
-  background-color: #FAFAFA;
+  background-color: #444752;
   position: relative;
   display: flex;
   justify-content: center;
@@ -14,6 +14,7 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
+  color: aliceblue;
 }
 
 .TodoListItem-p--complete {
@@ -29,6 +30,7 @@
   width: 48px;
   font-size: 24px;
   font-weight: bold;
+  color: aliceblue;
   /* background-color: #CCC; */
 }
 
@@ -37,13 +39,16 @@
   left: 12px;
 }
 
+.Icon-check:hover {
+  color: #4caf50;
+}
+
 .Icon-check--active {
   color: #4caf50;
 }
 
 .Icon-delete {
   position: absolute;
-  top: -24px;
   right: 0;
 }
 

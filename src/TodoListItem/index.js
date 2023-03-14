@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import "./TodoListItem.css";
 
 function TodoListItem(props) {
@@ -8,7 +9,7 @@ function TodoListItem(props) {
         className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
         onClick={props.onComplete}
       >
-        √
+        <AiOutlineCheckCircle></AiOutlineCheckCircle>
       </span>
       <p
         className={`TodoListItem-p ${
@@ -18,7 +19,7 @@ function TodoListItem(props) {
         {props.text}
       </p>
       <span className="Icon Icon-delete" onClick={props.onDelete}>
-        X
+        <AiOutlineCloseCircle></AiOutlineCloseCircle>
       </span>
     </li>
   );
