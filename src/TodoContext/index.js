@@ -58,7 +58,19 @@ function TodoProvider(props) {
 
   const addTodo = (text) => {
     const newTodos = [...todos];
-    newTodos.push({ completed: false, text: text });
+
+    const randomId = function (length = 6) {
+      return Math.random()
+        .toString(36)
+        .substring(2, length + 2);
+    };
+
+    let newId;
+    do {
+      newId = randomId();
+    } while (newTodos.filter((todo) => todo.id === newId).length !== 0);
+
+    newTodos.push({ id: newId, completed: false, text: text });
     saveTodos(newTodos);
   };
 
