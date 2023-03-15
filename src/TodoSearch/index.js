@@ -12,7 +12,7 @@ function TodoSearch() {
     <React.Fragment>
       <input
         className="TodoSearch"
-        placeholder="This is a placeholder"
+        placeholder="Busca tus ToDos"
         onChange={onSearchValueChange}
         value={searchValue}
       ></input>
