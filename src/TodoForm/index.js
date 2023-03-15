@@ -6,6 +6,7 @@ function TodoForm() {
   const { addTodo, setOpenModalAdd } = React.useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = React.useState("");
   const [error, setError] = React.useState(false);
+  const [play, setPlay] = React.useState(false);
 
   function onCancel() {
     setOpenModalAdd(false);
@@ -23,6 +24,11 @@ function TodoForm() {
 
   function onChange(event) {
     setNewTodoValue(event.target.value);
+    if (event.target.value.toUpperCase() === "TE AMO") {
+      setPlay(true);
+    } else {
+      setPlay(false);
+    }
   }
 
   function onTeclaEscape(event) {
@@ -52,6 +58,7 @@ function TodoForm() {
           Añadir ToDo
         </button>
       </div>
+      {play && <p>Te amo mucho más, mí amor</p>}
     </form>
   );
 }
