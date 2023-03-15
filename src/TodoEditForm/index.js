@@ -34,17 +34,17 @@ function TodoEditForm() {
         onChange={onChange}
         placeholder={modalEditTodo.TodoValueEdit}
       ></textarea>
-      <div className="TodoForm-buttonContainer">
+      <div className="TodoEditForm-buttonContainer">
         <button
           onClick={onCancel}
           type="button"
-          className="TodoForm-button odoForm-button--cancel"
+          className="TodoEditForm-button TodoEditForm-button--cancel"
         >
           Cancelar
         </button>
         <button
           type="submit"
-          className="TodoForm-button odoForm-button--cancel"
+          className="TodoEditForm-button TodoEditForm-button--cancel"
         >
           Editar ToDo
         </button>
