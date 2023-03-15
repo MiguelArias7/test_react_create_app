@@ -32,7 +32,7 @@ function TodoEditForm() {
       <textarea
         value={toEditTodoValue}
         onChange={onChange}
-        placeholder="Cortar la cebolla"
+        placeholder={modalEditTodo.TodoValueEdit}
       ></textarea>
       <div className="TodoForm-buttonContainer">
         <button
