@@ -8,6 +8,7 @@ import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
 import { TodoEditForm } from "../TodoEditForm";
+import { SortTodosButton } from "../SortTodosButton";
 
 function AppUI() {
   const {
@@ -64,6 +65,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateTodoButton setOpenModalAdd={setOpenModalAdd}></CreateTodoButton>
+      {!loading && <SortTodosButton></SortTodosButton>}
     </React.Fragment>
   );
 }

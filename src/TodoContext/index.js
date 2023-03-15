@@ -86,6 +86,15 @@ function TodoProvider(props) {
     saveTodos(newTodos);
   };
 
+  const sortTodos = (reverse) => {
+    const newTodos = [...todos];
+    newTodos.sort((a, b) =>
+      a.text.toUpperCase().localeCompare(b.text.toUpperCase())
+    );
+    if (reverse) newTodos.reverse();
+    saveTodos(newTodos);
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -98,6 +107,7 @@ function TodoProvider(props) {
         deleteTodo,
         editTodo,
         addTodo,
+        sortTodos,
         loading,
         error,
         openModalAdd,

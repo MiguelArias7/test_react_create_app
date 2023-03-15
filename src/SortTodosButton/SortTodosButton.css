@@ -1,0 +1,26 @@
+.SortTodosButton {
+    background-color: #af13c0;
+    box-shadow: 0px 0px 10px 5px rgba(200, 61, 224, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 50px;
+    position: fixed;
+    bottom: 24px;
+    right: 100px;
+    font-weight: bold;
+    color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 64px;
+
+    transform: rotate(0);
+    transition: .5s ease;
+    z-index: 1;
+}
+
+.SortTodosButton:hover {
+    transform: rotate(360deg);
+}
