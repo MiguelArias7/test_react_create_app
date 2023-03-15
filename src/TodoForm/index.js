@@ -44,11 +44,11 @@ function TodoForm() {
         <button
           onClick={onCancel}
           type="button"
-          className="TodoForm-button odoForm-button--cancel"
+          className="TodoForm-button TodoForm-button--cancel"
         >
           Cancelar
         </button>
-        <button type="submit" className="TodoForm-button odoForm-button-add">
+        <button type="submit" className="TodoForm-button TodoForm-button--add">
           Añadir ToDo
         </button>
       </div>
