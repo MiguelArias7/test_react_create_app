@@ -16,7 +16,7 @@ function TodoForm() {
     event.preventDefault();
     if (newTodoValue.length === 0) setError(true);
     else {
-      addTodo(newTodoValue);
+      addTodo(newTodoValue.trim());
       onCancel();
     }
   }
