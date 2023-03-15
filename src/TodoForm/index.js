@@ -39,7 +39,7 @@ function TodoForm() {
         onChange={onChange}
         placeholder="Cortar la cebolla"
       ></textarea>
-      {error && <p>Tienes un error en el mensaje</p>}
+      {error && <p className="Error-message">Tienes un error en el mensaje</p>}
       <div className="TodoForm-buttonContainer">
         <button
           onClick={onCancel}
