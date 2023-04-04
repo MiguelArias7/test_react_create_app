@@ -1,15 +1,11 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import "./SortTodosButton.css";
 import {
   AiOutlineSortAscending,
   AiOutlineSortDescending,
 } from "react-icons/ai";
 
-//TODO: Cambiar implementación por context
-function SortTodosButton() {
-  const { sortTodos } = React.useContext(TodoContext);
-
+function SortTodosButton({ sortTodos }) {
   const [sorted, setSorted] = React.useState(false);
 
   return (

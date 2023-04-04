@@ -1,9 +1,7 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import "./TodoForm.css";
 
-function TodoForm() {
-  const { addTodo, setOpenModalAdd } = React.useContext(TodoContext);
+function TodoForm({ addTodo, setOpenModalAdd }) {
   const [newTodoValue, setNewTodoValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [play, setPlay] = React.useState(false);
