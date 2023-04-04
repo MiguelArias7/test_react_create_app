@@ -9,6 +9,7 @@ import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
 import { TodoEditForm } from "../TodoEditForm";
 import { SortTodosButton } from "../SortTodosButton";
+import { TodoHeader } from "../TodoHeader";
 
 function AppUI() {
   const {
@@ -21,12 +22,25 @@ function AppUI() {
     setOpenModalAdd,
     modalEditTodo,
     setModalEditTodo,
+    todosTotalLength,
+    todosCompletedLength,
+    searchValue,
+    setSearchValue,
   } = React.useContext(TodoContext);
 
   return (
     <React.Fragment>
-      <TodoCounter></TodoCounter>
-      <TodoSearch></TodoSearch>
+      <TodoHeader>
+        <TodoCounter
+          todosTotalLength={todosTotalLength}
+          todosCompletedLength={todosCompletedLength}
+        ></TodoCounter>
+        <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        ></TodoSearch>
+      </TodoHeader>
+
       <TodoList>
         {loading && <p>Cargando, espera...</p>}
         {error && <p>Hubo un error </p>}
