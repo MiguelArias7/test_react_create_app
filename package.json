@@ -1,5 +1,5 @@
 {
-  "name": "test_react_create_app",
+  "name": "todos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
