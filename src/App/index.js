@@ -13,6 +13,7 @@ import { TodoHeader } from "../TodoHeader";
 import { TodosLoading } from "../TodosLoading";
 import { TodosError } from "../TodosError";
 import { TodosEmpty } from "../TodosEmpty";
+import { StoreChangeAlertWithStorageListener } from "../StorageChangeAlert";
 
 function App() {
   const {
@@ -116,6 +117,8 @@ function App() {
       )}
       <CreateTodoButton setOpenModalAdd={setOpenModalAdd}></CreateTodoButton>
       {!loading && <SortTodosButton sortTodos={sortTodos}></SortTodosButton>}
+
+      <StoreChangeAlertWithStorageListener></StoreChangeAlertWithStorageListener>
     </React.Fragment>
   );
 }
