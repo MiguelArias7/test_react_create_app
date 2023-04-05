@@ -1,14 +1,14 @@
 .TodoCounter {
-    font-size: 24px;
-    text-align: center;
-    margin: 0;
-    padding: 48px;
-  }
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+}
 
-  .TodoCounter--loading {
-    opacity: 25%;
-  }
+.TodoCounter--loading {
+  opacity: 25%;
+}
 
-  .TodoCounter--loaded {
-    transition: 2s;
-  }
+.TodoCounter--loaded {
+  transition: 2s;
+}
