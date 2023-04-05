@@ -10,6 +10,9 @@ import { TodoForm } from "../TodoForm";
 import { TodoEditForm } from "../TodoEditForm";
 import { SortTodosButton } from "../SortTodosButton";
 import { TodoHeader } from "../TodoHeader";
+import { TodosLoading } from "../TodosLoading";
+import { TodosError } from "../TodosError";
+import { TodosEmpty } from "../TodosEmpty";
 
 function App() {
   const {
@@ -43,13 +46,35 @@ function App() {
           setSearchValue={setSearchValue}
         ></TodoSearch>
       </TodoHeader>
-
-      <TodoList>
-        {loading && <p>Cargando, espera...</p>}
-        {error && <p>Hubo un error </p>}
-        {!loading && !searchedTodos.length && <p> Crea tu primer todo </p>}
-
-        {searchedTodos.map((todo) => (
+      <TodoList
+        loading={loading}
+        error={error}
+        searchedTodos={searchedTodos}
+        onLoading={() => <TodosLoading></TodosLoading>}
+        onError={() => <TodosError></TodosError>}
+        onEmpty={() => <TodosEmpty></TodosEmpty>}
+        // render={(todo) => (
+        //   <TodoListItem
+        //     key={todo.id}
+        //     text={todo.text}
+        //     completed={todo.completed}
+        //     onComplete={() => {
+        //       toggleTodo(todo.id);
+        //     }}
+        //     onDelete={() => {
+        //       deleteTodo(todo.id);
+        //     }}
+        //     onEdit={() => {
+        //       setModalEditTodo({
+        //         open: true,
+        //         TodoIdEdit: todo.id,
+        //         TodoValueEdit: todo.text,
+        //       });
+        //     }}
+        //   />
+        // )}
+      >
+        {(todo) => (
           <TodoListItem
             key={todo.id}
             text={todo.text}
@@ -68,8 +93,9 @@ function App() {
               });
             }}
           />
-        ))}
+        )}
       </TodoList>
+
       {openModalAdd && (
         <Modal>
           <TodoForm
