@@ -1,20 +1,20 @@
 import React from "react";
 import "./TodoSearch.css";
 
-function TodoSearch({ searchValue, setSearchValue }) {
+function TodoSearch({ searchValue, setSearchValue, loading }) {
   const onSearchValueChange = (event) => {
     setSearchValue(event.target.value);
   };
 
   return (
-    <React.Fragment>
-      <input
-        className="TodoSearch"
-        placeholder="Busca tus ToDos"
-        onChange={onSearchValueChange}
-        value={searchValue}
-      ></input>
-    </React.Fragment>
+    <input
+      className={`TodoSearch
+       ${!loading && "TodoSearch--loading"}`}
+      placeholder="Busca tus ToDos"
+      onChange={onSearchValueChange}
+      value={searchValue}
+      disabled={loading}
+    ></input>
   );
 }
 

@@ -3,4 +3,11 @@ ul {
   padding: 0px 56px 100px 56px;
   list-style: none;
   max-width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.ul--visible {
+  opacity: 1;
+  transition: 1s;
 }
