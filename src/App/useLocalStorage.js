@@ -24,7 +24,7 @@ function useLocalStorage(itemName, initialValue) {
         setError(error);
       }
     }, 1500);
-  });
+  }, []);
 
   const saveItem = (newTodos) => {
     // const stringifiedTodos = JSON.stringify(newTodos);
