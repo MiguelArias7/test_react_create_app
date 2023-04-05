@@ -7,6 +7,7 @@ function useTodos() {
     saveItem: saveTodos,
     loading,
     error,
+    synchronizeItems: synchronizeTodos,
   } = useLocalStorage("TODOS_V1", []);
 
   const defaultSearchValue = "";
@@ -111,6 +112,7 @@ function useTodos() {
     setOpenModalAdd,
     modalEditTodo,
     setModalEditTodo,
+    synchronizeTodos,
   };
 }
 

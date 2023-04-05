@@ -33,6 +33,7 @@ function App() {
     modalEditTodo,
     setModalEditTodo,
     sortTodos,
+    synchronizeTodos,
   } = useTodos();
 
   return (
@@ -118,7 +119,9 @@ function App() {
       <CreateTodoButton setOpenModalAdd={setOpenModalAdd}></CreateTodoButton>
       {!loading && <SortTodosButton sortTodos={sortTodos}></SortTodosButton>}
 
-      <StoreChangeAlertWithStorageListener></StoreChangeAlertWithStorageListener>
+      <StoreChangeAlertWithStorageListener
+        synchronizeTodos={synchronizeTodos}
+      ></StoreChangeAlertWithStorageListener>
     </React.Fragment>
   );
 }

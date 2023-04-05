@@ -9,5 +9,5 @@ ul {
 
 .ul--visible {
   opacity: 1;
-  transition: 1s;
+  /* transition: 1s; */
 }
